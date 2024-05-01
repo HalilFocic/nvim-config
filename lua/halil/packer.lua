@@ -30,5 +30,16 @@ return require('packer').startup(function(use)
 	}
   use "nvim-lua/plenary.nvim"
   use 'm4xshen/autoclose.nvim'
+  use {
+    'christoomey/vim-tmux-navigator',
+    config = function()
+      -- Define key mappings
+    vim.api.nvim_set_keymap('n', '<c-h>', ':TmuxNavigateLeft<CR>', { silent = true })
+    vim.api.nvim_set_keymap('n', '<c-j>', ':TmuxNavigateDown<CR>', { silent = true })
+    vim.api.nvim_set_keymap('n', '<c-k>', ':TmuxNavigateUp<CR>', { silent = true })
+    vim.api.nvim_set_keymap('n', '<c-l>', ':TmuxNavigateRight<CR>', { silent = true })
+    vim.api.nvim_set_keymap('n', '<c-\\>', ':TmuxNavigatePrevious<CR>', { silent = true })
+  end
+  }
 end)
 
