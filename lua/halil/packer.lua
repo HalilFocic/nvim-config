@@ -19,7 +19,9 @@ return require("packer").startup(function(use)
   use('folke/tokyonight.nvim')
   use({'rose-pine/neovim' , as = 'rose-pine'})
 
-  -- Git control from tpope
+  -- todo-comments for searching through todo and fixme 
+  use {'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim'}
+  -- Git control from my pope
 	use("tpope/vim-fugitive")
   -- lsp config
 	use({
