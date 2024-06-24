@@ -40,7 +40,6 @@ return require("packer").startup(function(use)
 	use("m4xshen/autoclose.nvim")
   -- Auto format config
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("MunifTanjim/prettier.nvim")
   -- use nvim ts autotag
   use("windwp/nvim-ts-autotag" )
   -- Tmux config
