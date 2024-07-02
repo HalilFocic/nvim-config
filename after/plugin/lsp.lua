@@ -23,7 +23,8 @@ require('mason-lspconfig').setup({
     'lua_ls',
     'jinja_lsp',
     'tailwindcss',
-    'jinja_lsp'
+    'jinja_lsp',
+    'gopls'
   },
   handlers = {
     function(server_name)
