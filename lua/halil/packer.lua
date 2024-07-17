@@ -17,18 +17,22 @@ return require("packer").startup(function(use)
     -- Themes
     use("navarasu/onedark.nvim")
     use('folke/tokyonight.nvim')
-    use({'rose-pine/neovim' , as = 'rose-pine'})
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({
         "L3MON4D3/LuaSnip",
+        requires = {
+            { "rafamadriz/friendly-snippets" },
+        },
         -- follow latest release.
         tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         -- install jsregexp (optional!:).
         run = "make install_jsregexp"
     })
-        -- todo-comments for searching through todo and fixme 
-    use {'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim'}
+    -- todo-comments for searching through todo and fixme
+    use { 'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim' }
     -- Git control from my pope
     use("tpope/vim-fugitive")
+    use("f-person/git-blame.nvim")
     -- lsp config
     use({
         "VonHeikemen/lsp-zero.nvim",
@@ -47,7 +51,7 @@ return require("packer").startup(function(use)
     -- Auto format config
     use("jose-elias-alvarez/null-ls.nvim")
     -- use nvim ts autotag
-    use("windwp/nvim-ts-autotag" )
+    use("windwp/nvim-ts-autotag")
     -- Tmux config
     use({
         "christoomey/vim-tmux-navigator",
