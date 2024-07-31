@@ -17,6 +17,12 @@ return require("packer").startup(function(use)
     -- Themes
     use("navarasu/onedark.nvim")
     use('folke/tokyonight.nvim')
+    --use({
+    --    "folke/tokyonight.nvim",
+    --    lazy = false,
+    --    priority = 1000,
+    --    opts = {},
+    --})
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({
         "L3MON4D3/LuaSnip",
@@ -48,6 +54,13 @@ return require("packer").startup(function(use)
     })
     use("nvim-lua/plenary.nvim")
     use("m4xshen/autoclose.nvim")
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
     -- Auto format config
     use("jose-elias-alvarez/null-ls.nvim")
     -- use nvim ts autotag

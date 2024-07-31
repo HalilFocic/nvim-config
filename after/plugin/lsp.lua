@@ -24,7 +24,9 @@ require('mason-lspconfig').setup({
     'jinja_lsp',
     'tailwindcss',
     'jinja_lsp',
-    'gopls'
+    'gopls',
+    "yamlls",
+    "templ"
   },
   handlers = {
     function(server_name)
@@ -43,4 +45,3 @@ require('lspconfig').lua_ls.setup({
   },
 })
 
-vim.cmd("Copilot disable")
