@@ -17,12 +17,6 @@ return require("packer").startup(function(use)
     -- Themes
     use("navarasu/onedark.nvim")
     use('folke/tokyonight.nvim')
-    --use({
-    --    "folke/tokyonight.nvim",
-    --    lazy = false,
-    --    priority = 1000,
-    --    opts = {},
-    --})
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({
         "L3MON4D3/LuaSnip",

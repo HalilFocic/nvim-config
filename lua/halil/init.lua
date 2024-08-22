@@ -1,7 +1,7 @@
 require("halil.set")
 require("halil.remap")
 require('tokyonight').setup({
-    transparent = true
+    transparent = false 
 })
 
 require('todo-comments').setup()
