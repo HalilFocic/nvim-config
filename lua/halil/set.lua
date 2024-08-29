@@ -30,3 +30,15 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.bo.expandtab = true
     end
 })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "go" },
+    callback = function()
+        -- print "Go file"
+        print('callback')
+        vim.bo.tabstop = 4
+        vim.bo.shiftwidth = 4
+        vim.bo.softtabstop = 4
+        vim.bo.autoindent = true
+        vim.bo.smartindent = true
+    end
+})

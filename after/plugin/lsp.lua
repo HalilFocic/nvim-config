@@ -35,6 +35,7 @@ require('mason-lspconfig').setup({
   },
 })
 
+require('lspconfig').gopls.setup({})
 require('lspconfig').lua_ls.setup({
   settings = {
     Lua = {

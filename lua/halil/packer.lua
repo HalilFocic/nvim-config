@@ -8,7 +8,7 @@ return require("packer").startup(function(use)
     })
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use("ThePrimeagen/vim-be-good")
-    use('folke/tokyonight.nvim')
+    use({ 'folke/tokyonight.nvim', priority = 1000 })
     use({
         "L3MON4D3/LuaSnip",
         requires = {
@@ -23,6 +23,7 @@ return require("packer").startup(function(use)
     -- Git control from my pope
     use("tpope/vim-fugitive")
     use("f-person/git-blame.nvim")
+    use('fatih/vim-go', { run = ':GoUpdateBinaries' })
     -- lsp config
     use({
         "VonHeikemen/lsp-zero.nvim",
@@ -36,7 +37,11 @@ return require("packer").startup(function(use)
             { "L3MON4D3/LuaSnip" },
         },
     })
-    use ('nvim-tree/nvim-web-devicons')
+    use({
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons" },
+    })
+    use('nvim-tree/nvim-web-devicons')
     use("nvim-lua/plenary.nvim")
     use("m4xshen/autoclose.nvim")
     use {
@@ -60,5 +65,19 @@ return require("packer").startup(function(use)
             vim.api.nvim_set_keymap("n", "<c-l>", ":TmuxNavigateRight<CR>", { silent = true })
             vim.api.nvim_set_keymap("n", "<c-\\>", ":TmuxNavigatePrevious<CR>", { silent = true })
         end,
+    })
+
+    use({
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+        dependencies = {
+            { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+        },
+        build = "make tiktoken", -- Only on MacOS or Linux
+        opts = {
+            debug = true, -- Enable debugging
+            -- See Configuration section for rest
+        },
     })
 end)
