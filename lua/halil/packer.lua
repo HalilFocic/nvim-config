@@ -14,16 +14,13 @@ return require("packer").startup(function(use)
         requires = {
             { "rafamadriz/friendly-snippets" },
         },
-        -- follow latest release.
         tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!:).
         run = "make install_jsregexp"
     })
     use { 'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim' }
     -- Git control from my pope
     use("tpope/vim-fugitive")
     use("f-person/git-blame.nvim")
-    use('fatih/vim-go', { run = ':GoUpdateBinaries' })
     -- lsp config
     use({
         "VonHeikemen/lsp-zero.nvim",
