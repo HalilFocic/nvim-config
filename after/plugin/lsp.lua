@@ -15,7 +15,7 @@ require('mason-lspconfig').setup({
     'cssls',
     'html',
     'jsonls',
-    'tsserver',
+    'ts_ls',
     'vimls',
     'yamlls',
     'rust_analyzer',
@@ -26,7 +26,8 @@ require('mason-lspconfig').setup({
     'jinja_lsp',
     'gopls',
     "yamlls",
-    "templ"
+    "templ",
+    "zls",
   },
   handlers = {
     function(server_name)

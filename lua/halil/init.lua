@@ -1,7 +1,7 @@
 require("halil.set")
 require("halil.remap")
 require('tokyonight').setup({
-    transparent = false
+    transparent = true,
 })
 
 require('todo-comments').setup()
@@ -20,5 +20,4 @@ end, {})
 vim.api.nvim_create_user_command('Warnings', function()
     vim.cmd("TodoTelescope keywords=WARN")
 end, {})
--- Execute ':Copilot disable' command when starting
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd [[colorscheme tokyonight-night]]
