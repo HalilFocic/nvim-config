@@ -1,9 +1,5 @@
 require("halil.set")
 require("halil.remap")
-require('tokyonight').setup({
-    transparent = true,
-})
-
 require('todo-comments').setup()
 -- Todo-comments shortcut commands
 vim.api.nvim_create_user_command('Todo', function()
@@ -20,4 +16,4 @@ end, {})
 vim.api.nvim_create_user_command('Warnings', function()
     vim.cmd("TodoTelescope keywords=WARN")
 end, {})
-vim.cmd [[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme tokyonight]]
