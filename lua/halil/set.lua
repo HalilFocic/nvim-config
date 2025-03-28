@@ -22,13 +22,13 @@ vim.opt.termguicolors = true
 vim.opt.updatetime = 50
 vim.g.mapleader = " "
 
---vim.o.cmdheight = 0
 
+-- JavaScript-specific settings via autocmd
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "html", "css", "javascript", "typescript", "typescriptreact", "javascriptreact" },
-    callback = function()
-        vim.bo.shiftwidth = 2
-        vim.bo.tabstop = 2
-        vim.bo.expandtab = true
-    end
+  pattern = {"javascript", "javascriptreact", "typescript", "typescriptreact", "json"},
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
 })
