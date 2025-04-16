@@ -25,10 +25,10 @@ vim.g.mapleader = " "
 --vim.o.cmdheight = 0
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "html", "css", "javascript", "typescript", "typescriptreact", "javascriptreact" },
-    callback = function()
-        vim.bo.shiftwidth = 2
-        vim.bo.tabstop = 2
-        vim.bo.expandtab = true
-    end
+  pattern = { "lua", "html", "css", "javascript", "typescript", "typescriptreact", "javascriptreact" },
+  callback = function()
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+    vim.bo.expandtab = true
+  end,
 })
